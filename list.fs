@@ -13,8 +13,6 @@ let minList (x:int list) = List.reduce min x
 
 let removeFst n x = List.filter (fun y -> y <> x) n
 
-let rec srtInts xs =
+let rec srtInts (xs:int list) =
   let m = minList xs
-  match xs with
-  | [] -> []
-  | _ -> m @ srtInts << removeFst m xs 
+  if xs.Length < 2 then xs else m :: (srtInts <| removeFst xs m)
