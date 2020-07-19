@@ -18,3 +18,4 @@ let rec srtInts (xs:int list) =
   if xs.Length < 2 then xs else m :: (srtInts <| removeFst xs m)
 
 let lengths (x: 'a list list) = List.map (fun (x: 'a list) -> x.Length) x
+
