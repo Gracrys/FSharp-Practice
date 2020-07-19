@@ -16,3 +16,5 @@ let removeFst n x = List.filter (fun y -> y <> x) n
 let rec srtInts (xs:int list) =
   let m = minList xs
   if xs.Length < 2 then xs else m :: (srtInts <| removeFst xs m)
+
+let lengths (x: 'a list list) = List.map (fun (x: 'a list) -> x.Length) x
